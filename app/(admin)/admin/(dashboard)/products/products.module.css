@@ -1,0 +1,243 @@
+.container {
+    padding: 2rem;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 1.8rem;
+    margin: 0;
+    font-family: var(--font-display);
+}
+
+.tabs {
+    display: flex;
+    background: #111;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.tabBtn {
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.tabBtnActive {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.tabBtnInactive {
+    background: transparent;
+    color: #888;
+    font-weight: normal;
+}
+
+.draftActive {
+    background: #333;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.refreshBtn {
+    background: #333;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.addBtn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.searchContainer {
+    margin-bottom: 1.5rem;
+}
+
+.searchInput {
+    padding: 10px 16px;
+    width: 100%;
+    max-width: 400px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: white;
+    outline: none;
+}
+
+.searchInput:focus {
+    border-color: var(--accent);
+}
+
+.tableContainer {
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 800px;
+}
+
+.thead {
+    background: #222;
+    color: #ccc;
+}
+
+.th,
+.td {
+    padding: 1rem;
+}
+
+.tr {
+    border-bottom: 1px solid #222;
+}
+
+/* Mobile Product Cards (Hidden on Desktop) */
+.productCardGrid {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.productCard {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.productCardImage {
+    width: 60px;
+    height: 60px;
+    background: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.productCardInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.productCardName {
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.productCardMeta {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productCardActions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .leftSection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .tabs {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tabBtn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .refreshBtn,
+    .addBtn {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .searchInput {
+        max-width: 100%;
+    }
+
+    /* Toggle visibility */
+    .tableContainer {
+        display: none;
+    }
+
+    .productCardGrid {
+        display: grid;
+    }
+}

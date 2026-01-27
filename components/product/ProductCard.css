@@ -1,0 +1,211 @@
+.product-card {
+    background-color: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform var(--transition-fast), shadow var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.product-image-link {
+    display: block;
+}
+
+.product-image-container {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background-color: var(--input);
+    overflow: hidden;
+}
+
+.product-image {
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--muted);
+}
+
+.discount-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    z-index: 2;
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+    border: none;
+}
+
+.wishlist-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.wishlist-btn.active {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #e31b23;
+}
+
+.card-compare-btn-wrapper {
+    position: absolute;
+    top: 48px;
+    right: var(--spacing-sm);
+    z-index: 2;
+}
+
+.product-info {
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-category {
+    color: var(--muted-foreground);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+.product-name {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+    min-height: 2.4rem;
+    line-height: 1.2;
+    line-height: 1.2;
+}
+
+.product-footer-row {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+}
+
+.add-to-cart-action-btn {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    width: 100%;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.add-to-cart-action-btn:hover {
+    background-color: var(--accent);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.product-price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 14px;
+    /* Reduced by 2px approx from 1rem */
+    color: var(--accent);
+}
+
+.product-old-price {
+    color: var(--muted-foreground);
+    text-decoration: line-through;
+    font-size: 11px;
+}
+
+.add-to-cart-btn {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast);
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--accent);
+}
+
+@media (max-width: 380px) {
+    .product-info {
+        padding: 4px;
+    }
+
+    .product-name {
+        font-size: 11px;
+        min-height: 2rem;
+        margin-bottom: 2px;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+
+    .product-old-price {
+        font-size: 10px;
+    }
+
+    .add-to-cart-action-btn {
+        height: 30px;
+        font-size: 10px;
+        gap: 4px;
+    }
+
+    .discount-badge {
+        font-size: 9px;
+        padding: 1px 4px;
+    }
+}

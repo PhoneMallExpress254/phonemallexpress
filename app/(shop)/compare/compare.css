@@ -1,0 +1,135 @@
+.compare-page {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.compare-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.compare-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 700px;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    vertical-align: top;
+    text-align: left;
+    background: var(--background);
+}
+
+.compare-table th:last-child,
+.compare-table td:last-child {
+    border-right: none;
+}
+
+/* Header Cells (Product Images) - Sticky Top */
+.compare-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: var(--secondary);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature Labels (First Column) - Sticky Left */
+.compare-table .feature-label {
+    background-color: var(--secondary);
+    font-weight: 600;
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    color: var(--muted-foreground);
+    border-right: 2px solid var(--border);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* The Top-Left Corner Cell - Sticky Top AND Left */
+.compare-table thead th.feature-label {
+    z-index: 30;
+    background-color: var(--secondary);
+    border-bottom: 2px solid var(--border);
+}
+
+.product-col {
+    min-width: 240px;
+}
+
+.compare-product-header {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+}
+
+.remove-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: transparent;
+    border: none;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.remove-btn:hover {
+    color: #ff4444;
+}
+
+.product-thumb {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--foreground);
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.product-title:hover {
+    color: var(--accent);
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.add-cart-btn {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}

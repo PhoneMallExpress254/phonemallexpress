@@ -1,0 +1,54 @@
+.starRating {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.star {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.star svg {
+    display: block;
+}
+
+.readonly .star {
+    cursor: default;
+}
+
+.interactive .star:hover {
+    transform: scale(1.1);
+}
+
+/* Sizes */
+.small .star svg {
+    width: 16px;
+    height: 16px;
+}
+
+.medium .star svg {
+    width: 24px;
+    height: 24px;
+}
+
+.large .star svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* States */
+.filled {
+    color: var(--accent);
+}
+
+.empty {
+    color: #333;
+}
+
+.interactive .star:disabled {
+    cursor: default;
+}

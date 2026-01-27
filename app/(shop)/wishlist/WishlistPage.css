@@ -1,0 +1,31 @@
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Force 2 columns on mobile */
+    gap: var(--spacing-sm);
+}
+
+@media (min-width: 640px) {
+    .wishlist-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--spacing-md);
+    }
+}
+
+.wishlist-container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.wishlist-title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .wishlist-title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-md);
+    }
+}
