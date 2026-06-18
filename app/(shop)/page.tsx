@@ -4,6 +4,7 @@ import dbConnect from "@/lib/db";
 import Product from "@/models/Product";
 import ProductCard from "@/components/product/ProductCard";
 import LazyRSQPopup from "@/components/common/LazyRSQPopup";
+import FlashSaleCountdown from "@/components/layout/FlashSaleCountdown";
 import Hero from "@/components/layout/Hero";
 import TrustStrip from "@/components/layout/TrustStrip";
 import Newsletter from "@/components/layout/Newsletter";
@@ -293,6 +294,9 @@ export default async function Home() {
 
       {/* Gaming */}
       {renderProductSection("Level Up Your Gear", "Pro-grade peripherals for victory.", "/products/gaming", gamingProducts)}
+
+      {/* Flash Sale Countdown */}
+      {flashSales.length > 0 && <FlashSaleCountdown count={flashSales.length} />}
 
       {/* Flash Sales */}
       {renderProductSection("Lightning Deals", "Grab them before they're gone.", "/search?q=deal", flashSales)}

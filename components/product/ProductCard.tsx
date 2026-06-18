@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, Heart } from 'lucide-react';
+import { ShoppingCart, Heart, Eye } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import './ProductCard.css';
@@ -106,6 +106,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     ) : (
                         <div className="product-image-placeholder" />
                     )}
+                    <div className="quick-view-overlay">
+                        <span className="quick-view-pill">
+                            <Eye size={14} />
+                            Quick View
+                        </span>
+                    </div>
                     {discount && <span className="discount-badge">-{discount}%</span>}
                     {product.isOnSpecialOffer && <span className="special-offer-badge">SALE</span>}
 
