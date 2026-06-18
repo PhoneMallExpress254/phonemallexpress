@@ -4,6 +4,9 @@ import dbConnect from "@/lib/db";
 import Product from "@/models/Product";
 import ProductCard from "@/components/product/ProductCard";
 import LazyRSQPopup from "@/components/common/LazyRSQPopup";
+import Hero from "@/components/layout/Hero";
+import TrustStrip from "@/components/layout/TrustStrip";
+import Newsletter from "@/components/layout/Newsletter";
 import './Home.css';
 
 const CATEGORIES = [
@@ -176,6 +179,9 @@ export default async function Home() {
 
   return (
     <div className="home-page">
+      <Hero />
+      <TrustStrip />
+
       {/* Shop by Category Section */}
       <section className="section-py" style={{ paddingTop: '0.25rem' }}>
         <div className="container">
@@ -336,6 +342,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <Newsletter />
 
       <LazyRSQPopup />
     </div>
