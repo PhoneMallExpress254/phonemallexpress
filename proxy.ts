@@ -6,7 +6,7 @@ const JWT_SECRET = new TextEncoder().encode(
     process.env.JWT_SECRET || 'phonemallexpress-secret-key-2026'
 );
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     // Only protect /admin (except /admin/login) and /api/admin (except /api/admin/login)
